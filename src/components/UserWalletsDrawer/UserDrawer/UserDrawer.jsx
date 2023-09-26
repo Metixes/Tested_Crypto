@@ -24,8 +24,8 @@ export default function UserDrawer() {
     address: address,
   });
 
-  const handelWalletConnect = (connector) => {
-    connectAsync({ connector });
+  const handelWalletConnect = async (connector) => {
+    await connectAsync({ connector });
     closeDrawer();
   };
 
@@ -67,11 +67,11 @@ export default function UserDrawer() {
               {connectors.map((connector) => (
                 <button
                   className={styles.drawer_walletLinks}
-                  disabled={!connector.ready}
+                  disabled={!connector?.ready}
                   key={crypto.randomUUID()}
                   onClick={() => handelWalletConnect(connector)}>
                   <svg className={styles.drawer_walletIcon}>
-                    {connector.options.use}
+                    {connector?.options?.use}
                   </svg>
                   {connector?.name}
                 </button>
