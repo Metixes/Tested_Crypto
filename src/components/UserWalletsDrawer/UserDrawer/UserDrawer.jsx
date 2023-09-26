@@ -24,8 +24,8 @@ export default function UserDrawer() {
     address: address,
   });
 
-  const handelWalletConnect = async (connector) => {
-    await connectAsync({ connector });
+  const handelWalletConnect = (connector) => {
+    connectAsync({ connector });
     closeDrawer();
   };
 
