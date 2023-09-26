@@ -1,0 +1,100 @@
+@import '../../../assets/styles/variables/variables.scss';
+@import '../../../assets/styles/mixins/mixins.scss';
+
+.drawer{
+    &_isConnectedHeader{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &_userWalletInfo{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & > svg{
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+        }
+    }
+
+    &_userWalletAddress{
+        @include text-drawer-address;
+        padding: 5px 10px;
+        user-select: none;
+    }
+
+    &_WalletDisconnect{
+        @include text-drawer-walletDisconnect;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        cursor: pointer;
+    }
+}
+
+.userWalletButton{
+    @include text-drawer-address;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    cursor: pointer;
+
+    &_icon{
+        :where(.anticon-user, svg){
+            width: 25px !important;
+            height: 25px !important;
+        }
+    }
+}
+
+:global{
+    .ant-drawer{
+        &-title{
+            @include text-drawer-title;
+        }
+        &-content{
+            background: $black !important;
+        }
+        &-close{
+            display: none !important;
+        }
+    }
+    .ant-typography{
+        display: flex;
+        align-items: center;
+        margin-bottom: 0 !important;
+
+        &:hover {
+            :where(.anticon-copy){
+                display: block;
+            }
+        }
+    }
+
+    .anticon-copy{
+        & > svg{
+            width: 16px !important;
+            height: 16px !important;
+        }
+        display: none;
+    }
+    .anticon-check-circle{
+        & > svg{
+            width: 16px !important;
+            height: 16px !important;
+        }
+    }
+    .anticon-logout{
+        & > svg{
+            width: 24px;
+            height: 24px;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+@import "../../../assets/styles/variables/variables.scss";
+@import "../../../assets/styles/mixins/mixins.scss";
+
+.connectBtn {
+    @include button-connect;
+}
